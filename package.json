@@ -1,6 +1,6 @@
 {
   "name": "safe-type-predicate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use type-predicate safely with TypeScript",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
