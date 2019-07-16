@@ -1,7 +1,7 @@
 {
   "name": "safe-type-predicate",
   "version": "1.0.0",
-  "description": "Use safe-type-predicate safely with TypeScript",
+  "description": "Use type-predicate safely with TypeScript",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
