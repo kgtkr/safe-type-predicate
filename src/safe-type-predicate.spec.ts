@@ -1,22 +1,22 @@
-import { isType, isNotType, toIsTypeFunction } from "./safe-is-type";
+import { isT, isNotT, defineIsT } from "./safe-type-predicate";
 
-describe("safe is type", () => {
-  describe("isType", () => {
+describe("safe-type-predicate", () => {
+  describe("isT", () => {
     it("should always return true", () => {
-      expect(isType(null)).toEqual(true);
+      expect(isT(null)).toEqual(true);
     });
   });
 
-  describe("isNotType", () => {
+  describe("isNotT", () => {
     it("should always return false", () => {
-      expect(isNotType()).toEqual(false);
+      expect(isNotT()).toEqual(false);
     });
   });
 
-  describe("toIsTypeFunction", () => {
+  describe("defineIsT", () => {
     describe("define isString", () => {
-      const isString = toIsTypeFunction((x: unknown) =>
-        typeof x === "string" ? isType(x) : isNotType()
+      const isString = defineIsT((x: unknown) =>
+        typeof x === "string" ? isT(x) : isNotT()
       );
 
       it("isString(string) should return true", () => {
@@ -29,9 +29,7 @@ describe("safe is type", () => {
     });
 
     describe("define isOne", () => {
-      const isOne = toIsTypeFunction((x: 1 | 2) =>
-        x === 1 ? isType(x) : isNotType()
-      );
+      const isOne = defineIsT((x: 1 | 2) => (x === 1 ? isT(x) : isNotT()));
 
       it("isOne(1) should return true", () => {
         expect(isOne(1)).toEqual(true);

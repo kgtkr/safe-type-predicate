@@ -1,1 +1,1 @@
-export * from "./safe-is-type";
+export * from "./safe-type-predicate";

@@ -1,7 +1,7 @@
 {
-  "name": "safe-is-type-ts",
+  "name": "safe-type-predicate",
   "version": "1.0.0",
-  "description": "Use is-type safely with TypeScript",
+  "description": "Use safe-type-predicate safely with TypeScript",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kgtkr/safe-is-type-ts.git"
+    "url": "git+https://github.com/kgtkr/safe-type-predicate.git"
   },
   "author": "kgtkr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kgtkr/safe-is-type-ts/issues"
+    "url": "https://github.com/kgtkr/safe-type-predicate/issues"
   },
-  "homepage": "https://github.com/kgtkr/safe-is-type-ts#readme",
+  "homepage": "https://github.com/kgtkr/safe-type-predicate#readme",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",

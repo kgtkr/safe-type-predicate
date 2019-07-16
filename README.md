@@ -1,29 +1,29 @@
-# safe-is-type-ts
+# safe-type-predicate
 
-[![Build Status](https://travis-ci.org/kgtkr/safe-is-type-ts.svg?branch=master)](https://travis-ci.org/kgtkr/safe-is-type-ts)
+[![Build Status](https://travis-ci.org/kgtkr/safe-type-predicate.svg?branch=master)](https://travis-ci.org/kgtkr/safe-type-predicate)
 
 ## Install
 
 ```sh
-$ npm i safe-is-type-ts
+$ npm i safe-type-predicate
 ```
 
 ## Usage
 
 ```ts
-import { isType, isNotType, toIsTypeFunction } from "safe-is-type-ts";
+import { isT, isNotT, defineIsT } from "safe-type-predicate";
 
 // isString: (x: unknown) => x is string
-const isString = toIsTypeFunction((x: unknown) =>
-    typeof x === "string" ? isType(x) : isNotType()
+const isString = defineIsT((x: unknown) =>
+    typeof x === "string" ? isT(x) : isNotT()
 );
 
 isString("x"); // true
 isString(null); // false
 
 // isA: (x: "a" | "b") => x is "a"
-const isA = toIsTypeFunction((x: "a" | "b") =>
-    x === "a" ? isType(x) : isNotType()
+const isA = defineIsT((x: "a" | "b") =>
+    x === "a" ? isT(x) : isNotT()
 );
 
 isA("a"); // true
