@@ -1,27 +1,7 @@
 {
-  "name": "safe-type-predicate",
-  "version": "1.0.1",
-  "description": "Use type-predicate safely with TypeScript",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kgtkr/safe-type-predicate.git"
-  },
-  "author": "kgtkr",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kgtkr/safe-type-predicate/issues"
-  },
-  "homepage": "https://github.com/kgtkr/safe-type-predicate#readme",
+  "name": "root",
+  "private": true,
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.2"
+    "lerna": "^3.15.0"
   }
 }
