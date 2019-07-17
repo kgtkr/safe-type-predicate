@@ -1,0 +1,27 @@
+{
+  "name": "tslint-safe-type-predicate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tslint-safe-type-predicate.json",
+  "scripts": {
+    "test": "tslint --test test/tslint.json",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgtkr/tslint-safe-type-predicate.git"
+  },
+  "author": "kgtkr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kgtkr/tslint-safe-type-predicate/issues"
+  },
+  "homepage": "https://github.com/kgtkr/tslint-safe-type-predicate#readme",
+  "dependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.4"
+  }
+}

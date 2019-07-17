@@ -1,0 +1,128 @@
+defineIsT((x: T) => e ? isT(x) : isNotT());
+defineIsT(x => e ? isT(x) : isNotT());
+defineIsT<T, R>((x: T) => e ? isT(x) : isNotT());
+
+defineIsT((x: T) => (e) ? isT(x) : isNotT());
+defineIsT((x: T) => e ? (isT)(x) : isNotT());
+defineIsT((x: T) => e ? isT((x)) : isNotT());
+defineIsT((x: T) => e ? (isT(x)) : isNotT());
+defineIsT((x: T) => e ? isT(x) : (isNotT)());
+defineIsT((x: T) => e ? isT(x) : (isNotT()));
+defineIsT((x: T) => (e ? isT(x) : isNotT()));
+defineIsT(((x: T) => (e) ? isT(x) : isNotT()));
+
+
+defineIsT((x: T) => {
+    if(e){
+        return isT(x);
+    } else {
+        return isNotT();
+    }
+});
+
+defineIsT((x: (T<A>)) => e ? isT(x) : isNotT());
+defineIsT((x: T) => e ? isT(((((((x))))))) : isNotT());
+defineIsT((x: T) => e ? isT(x) : isNotT(), );
+
+(defineIsT)((x: T) => (e) ? isT(y) : isNotT());
+                            ~~~~~~ [expect: 'isT(x)']
+defineIsT();
+~~~~~~~~~~~ [argument should be one]
+defineIsT((x: T) => e ? isT(x) : isNotT(), hoge);
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [argument should be one]
+defineIsT(1);
+          ~ [expect to be an arrow function]
+defineIsT((x: T, y) => e ? isT(x) : isNotT());
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [argument should be one]
+defineIsT((x: T) => e ? isT_(x) : isNotT());
+                        ~~~~~~~ [expect: 'isT(x)']
+defineIsT((x: T) => e ? isT() : isNotT());
+                        ~~~~~ [expect: 'isT(x)']
+defineIsT((x: T) => e ? isT(x, y) : isNotT());
+                        ~~~~~~~~~ [expect: 'isT(x)']
+defineIsT((x: T) => e ? isT(x) : isNotT_());
+                                 ~~~~~~~~~ [expect: 'isNotT()']
+defineIsT((x: T) => e ? isT(x) : isNotT(y));
+                                 ~~~~~~~~~ [expect: 'isNotT()']
+defineIsT(([x]: T) => e ? isT(x) : isNotT());
+           ~~~ [should be a simple identifier]
+defineIsT((x: T) => { e ? isT(x) : isNotT(); });
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => { return e ? isT(x) : isNotT(); });
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => {
+                    ~
+    f();
+~~~~~~~~
+    if(e){
+~~~~~~~~~~~
+        return isT(x);
+~~~~~~~~~~~~~~~~~~~~~~
+    } else {
+~~~~~~~~~~~~
+        return isNotT();
+~~~~~~~~~~~~~~~~~~~~~~~~
+    }
+~~~~~
+});
+~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => {
+                    ~
+    if(e){
+~~~~~~~~~~
+        return isT(x);
+~~~~~~~~~~~~~~~~~~~~~~
+    } else {
+~~~~~~~~~~~~
+        return isNotT();
+~~~~~~~~~~~~~~~~~~~~~~~~
+    }
+~~~~~
+    f();
+~~~~~~~~
+});
+~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => {
+                    ~
+    if(e){
+~~~~~~~~~~
+        f();
+~~~~~~~~~~~~
+        return isT(x);
+~~~~~~~~~~~~~~~~~~~~~~
+    } else {
+~~~~~~~~~~~~
+        return isNotT();
+~~~~~~~~~~~~~~~~~~~~~~~~
+    }
+~~~~~
+});
+~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => {
+                    ~
+    if(e){
+~~~~~~~~~~
+        isT(x);
+~~~~~~~~~~~~~~~
+    } else {
+~~~~~~~~~~~~
+        return isNotT();
+~~~~~~~~~~~~~~~~~~~~~~~~
+    }
+~~~~~
+});
+~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']
+defineIsT((x: T) => {
+                    ~
+    if(e){
+~~~~~~~~~~
+        return;
+~~~~~~~~~~~~~~~
+    } else {
+~~~~~~~~~~~~~
+        return isNotT();
+~~~~~~~~~~~~~~~~~~~~~~~~
+    }
+~~~~~
+});
+~ [expect: '<expr> ? <expr> : <expr>' or '{ if(<expr>) { return <expr>; } else { return <expr>; } }']

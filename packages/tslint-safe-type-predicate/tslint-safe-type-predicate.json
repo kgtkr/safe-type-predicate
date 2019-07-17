@@ -1,0 +1,6 @@
+{
+    "rulesDirectory": "./dist",
+    "rules": {
+        "safe-type-predicate": true
+    }
+}
