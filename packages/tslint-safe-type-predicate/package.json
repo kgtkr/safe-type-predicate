@@ -1,6 +1,6 @@
 {
   "name": "tslint-safe-type-predicate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "tslint-safe-type-predicate.json",
   "scripts": {
